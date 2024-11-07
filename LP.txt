@@ -1,0 +1,58 @@
+Q1.) Write a program non-recursive and recursive program to calculate Fibonacci numbers and analyze their time and space complexity. 
+  
+				FORMULA 
+ ************F0= 0 , F1= 1 , Fn= fn-1 + Fn-2 *******************
+
+0 1 1 2 3 5 8 …………..
+We want to find 80th fibo series 
+F80= f0  f1 f2 f3 ………...f79 f80 
+
+         f0 is prepre and f1 is pre 
+
+Iterative method :
+
+for (2 to 79 )
+pre= F i-1 >F 78 
+prepre= F i-2 > F 77
+
+F79= prepre + pre
+F80 =pre + F79
+
+program :
+  import time 
+def fiboIter (n):
+	prevNum= 0
+	currentNum = 1
+	for i in range(1 , n):
+		prepreNum = prevNum 
+		prevNum= currentNum
+		currentNum = prepreNum + prevNum
+	return currentNum	
+
+def fiboRecur(n):
+	if n= = 0:
+		return 0
+	elif (n= = 1):
+		return 1
+	else :
+		return fiboRecur(n-1)+ fiboRecur(n-2)
+
+if __name__ = = "__main__":
+	num= int(input("Enter a number"))
+	init = time.time()
+	print(f"Using recursions value of fib({num}) is {fiboRecur(num)}")
+	print(f"Using Iterations value of fib({num}) is {fiboIter(num)}")
+	
+	print("It took {time.time() - init }seconds")
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+DAA prac 2 ---->>>>Khushal khuswaha | prac 3 --->>>>>Take u forward
+---------------------------------------------------------------------------------------------------------------------
+ML
+https://github.com/afnan47/sem7/tree/main/ML
+https://github.com/RohitBhandare/machine-learning-practicals/blob/main/ML%20Practical-01.ipynb
+ 	
+	
